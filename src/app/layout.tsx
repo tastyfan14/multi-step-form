@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
-import './globals.css'
+import '@/shared/styles/main.scss'
 
 const UbuntuFont = Ubuntu({
     variable: '--font-ubuntu',
     weight: ['400', '500', '700'],
     subsets: ['latin'],
-});
+})
 
 export const metadata: Metadata = {
     title: 'Multi-step form',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     icons: {
         icon: 'favicon-32x32.png'
     }
-};
+}
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
     return (
         <html lang='en' className={`${UbuntuFont.variable}`}>
-        <body>
-            {children}
-        </body>
+            <body>
+                {children}
+            </body>
         </html>
     )
 }
