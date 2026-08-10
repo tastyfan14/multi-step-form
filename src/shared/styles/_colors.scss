@@ -1,0 +1,42 @@
+:root {
+    // --white: #FFFFFF;
+    // --black: #000000;
+    // --grey-500: #9699AA;
+    // --orange-300: #FFAF7E;
+    // --red-500: #EE374A;
+    // --red-450: #E96170;
+    // --red-400: #F9818E;
+    // --p-600: #483EFF;
+    // --p-500: #6259FF;
+    // --p-400: #928CFF;
+    // --p-200: #D6D9E6;
+    // --blue-950: #022959;
+    // --blue-700: #164A8A;
+    // --blue-300: #ABBCFF;
+    // --blue-200: #BEE2FD;
+    // --blue-100: #EFF5FF;
+    // --blue-50: #F8F9FF;
+
+    --text-primary: #022959; // blue 950
+    --text-secondary: #FFFFFF; // white
+    --text-tertiary: #9699AA; // grey 500
+    --text-quaternary: #ABBCFF; // blue 300
+    --text-accent-primary: #483EFF; // purple 600
+
+    --bg-primary: #FFFFFF; // white
+    --bg-secondary: #022959; // blue 950
+    --bg-tertiary: #F8F9FF; // blue 50
+    --bg-accent-1: #483EFF; // purple 600
+    --bg-accent-2: #F9818E; // red 400
+    --bg-accent-3: #FFAF7E; // orange 300
+    --bg-accent-4: #BEE2FD; // blue 200
+    --bg-secondary-active: #164A8A; // blue 700
+    --bg-accent-1-active: #928CFF; // purple 400
+
+    --border-primary: #D6D9E6; // purple 200
+    --border-secondary: #FFFFFF; // white
+    --border-outline-primary: #483EFF; // purple 600
+    --border-error: #EE374A; // red 500
+
+    // the color palette is curated based on usage frequency
+}
