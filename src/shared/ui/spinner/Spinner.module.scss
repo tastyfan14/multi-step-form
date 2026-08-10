@@ -1,0 +1,21 @@
+@use '@/shared/styles/mixins' as *; // instruments
+@use '@/shared/styles/functions' as *; // instruments
+
+//
+
+.spinner {
+    width: rem(18);
+    height: rem(18);
+
+    border: 2px solid transparent;
+    border-right-color: currentColor;
+    border-radius: get-radius(circle);
+
+    animation: spin .7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360);
+    }
+}
