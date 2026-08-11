@@ -5,23 +5,26 @@ import type { ToggleProps } from './types'
 export default function Toggle<T>({ value, first, second, onChange }: ToggleProps<T>) {
     return (
         <div className={cls.toggle}>
-            <button
-            className={clsx(cls['toggle__button'], value === first.value ? cls['toggle__button--active'] : null)}
-            aria-pressed={value === first.value}
-            onClick={() => onChange(first.value)}
+            <span
+            className={clsx(cls['toggle__title'], value === first.value ? cls['toggle__title--active'] : null)}
             >
                 {first.label}
-            </button>
-
-            <span className={clsx(cls['toggle__divider'], value === first.value ? cls['toggle__divider--right'] : null)}></span>
+            </span>
 
             <button
-            className={clsx(cls['toggle__button'], value === second.value ? cls['toggle__button--active'] : null)}
-            aria-pressed={value === second.value}
-            onClick={() => onChange(second.value)}
+            className={cls['toggle__divider']}
+            aria-label={`Switch to ${value === first.value ? second.label : first.label}`}
+            aria-pressed={value === first.value}
+            onClick={() => onChange(value === first.value ? second.value : first.value)}
+            >
+                <span className={clsx(cls['toggle__thumb'], value === first.value ? null : cls['toggle__thumb--active'])} />
+            </button>
+
+            <span
+            className={clsx(cls['toggle__title'], value === second.value ? cls['toggle__title--active'] : null)}
             >
                 {second.label}
-            </button>
+            </span>
         </div>
     )
 }
