@@ -8,7 +8,7 @@ export default function RadioCard({ id, children, className, ...props }: RadioCa
     return (
         <div className={clsx(cls['radio-card'], className && className)}>
             <Input type='radio' id={id} {...props} />
-            <Label variant='in' htmlFor={id}>
+            <Label variant='in' className={cls['radio-card__label']} htmlFor={id}>
                 {children}
             </Label>
         </div>
