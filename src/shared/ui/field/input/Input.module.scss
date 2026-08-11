@@ -1,0 +1,43 @@
+@use '@/shared/styles/mixins' as *; // instruments
+@use '@/shared/styles/functions' as *; // instruments
+
+//
+
+%input {
+    @include size(width, full);
+
+    border-radius: get-radius(5xs);
+
+    @include flex($justify: center, $align: center, $gap: m3);
+
+    @include space(padding, m3, md, m3, md);
+
+    @include typography(t-4-medium);
+    color: var(--text-secondary);
+
+    @include breakpoint(laptop) {
+        border-radius: get-radius(3xs);
+
+        @include typography(t-3-medium);
+
+        gap: get-space(sm);
+    };
+
+    &::placeholder {
+        color: var(--text-tertiary);
+    }
+}
+
+.input {
+    @extend %input;
+
+    border: rem(1) solid var(--border-primary);
+
+    &:focus-visible {
+        border-color: var(--border-outline-primary);
+    }
+}
+
+.input[aria-invalid='true'] {
+    border-color: var(--border-error);
+}
