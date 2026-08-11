@@ -2,3 +2,48 @@
 @use '@/shared/styles/functions' as *; // instruments
 
 //
+
+.radio-card {
+    @include size(width, full);
+
+    background-color: transparent;
+
+    border: rem(1) solid var(--border-primary);
+    border-radius: get-radius(3xs);
+
+    position: relative;
+
+    transition: border-color .1s linear, background-color .1s linear, transform .1s linear;
+    will-change: transform;
+
+    & > * {
+        cursor: pointer;
+    }
+
+    &__label {
+        @include size(width, full);
+        @include size(height, full);
+    }
+
+    &:has(input:checked) {
+        border-color: var(--border-outline-primary);
+        background-color: var(--bg-tertiary);
+    }
+
+    &:hover {
+        background-color: var(--bg-tertiary);
+    }
+
+    &:has(input:focus-visible) {
+        outline: rem(1) solid var(--border-outline-primary);
+        border-color: var(--border-outline-primary);
+    }
+
+    &:active {
+        transform: scale(.995);
+
+        @include breakpoint(desktop) {
+            transform: scale(.99);
+        };
+    }
+}
