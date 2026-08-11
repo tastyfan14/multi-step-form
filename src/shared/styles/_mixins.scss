@@ -199,3 +199,21 @@
         @error " The parameter '$property' must be width or height. Current value: '#{$property}' ";
     }
 }
+
+// Special mixin made only for the printing house takes a variable with values from the typography map and converts it to font
+@mixin typography($class: null) {
+    $cls: map.get($typography, $class);
+
+    @if $class == null {
+        @error " The mixin cannot be empty. ";
+    } @else {
+        @include font(
+            map.get($cls, weight),
+            map.get($cls, family),
+            currentColor,
+            map.get($cls, line-height),
+            map.get($cls, letter-spacing)
+        );
+        font-size: map.get($cls, font-size);
+    }
+}
