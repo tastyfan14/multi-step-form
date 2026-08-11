@@ -17,13 +17,13 @@ html {
     font-size: 16px;
 
     scroll-behavior: smooth;
-    scrollbar-color: var(--bg-secondary) transparent;
+    scrollbar-color: var(--bg-accent-1) transparent;
     scrollbar-width: thin;
 }
 
 html::selection {
-    background-color: var(--bg-accent-primary);
-    color: var(--text-secondary);
+    // background-color: var(--bg-accent-primary);
+    // color: var(--text-secondary);
 
     scrollbar-gutter: stable;
 }
@@ -33,7 +33,7 @@ body {
 
     overflow-x: hidden;
 
-    background-color: var(--bg-primary);
+    background-color: #EFF5FF;
 }
 
 img, picture, video, canvas, svg {
@@ -52,6 +52,8 @@ button, input, optgroup, select, textarea {
     border: none;
     background: none;
     outline: none;
+    padding: 0;
+    margin: 0;
 }
 
 button, [type='button'], [type='reset'], [type='submit'] {
@@ -82,6 +84,8 @@ ol, ul, li {
 
 fieldset {
     border: 0;
+    padding: 0;
+    margin: 0;
 }
 
 table {
