@@ -172,3 +172,62 @@ $letter-spacings: (
 
     ten: 10,
 );
+
+$typography: (
+    t-1-bold: (
+        weight: bold,
+        family: var(--font-ubuntu),
+        line-height: twelve,
+        letter-spacing: md,
+        font-size: get-font-size(7xl),
+    ),
+    t-2-bold: (
+        weight: bold,
+        family: var(--font-ubuntu),
+        line-height: twelve,
+        letter-spacing: md,
+        font-size: get-font-size(3xl),
+    ),
+    t-3-medium: (
+        weight: medium,
+        family: var(--font-ubuntu),
+        line-height: twelve,
+        letter-spacing: md,
+        font-size: get-font-size(md),
+    ),
+    t-3-regular: (
+        weight: regular,
+        family: var(--font-ubuntu),
+        line-height: fifteen,
+        letter-spacing: md,
+        font-size: get-font-size(md),
+    ),
+    t-4-bold: (
+        weight: bold,
+        family: var(--font-ubuntu),
+        line-height: twelve,
+        letter-spacing: 3xl,
+        font-size: get-font-size(sm),
+    ),
+    t-4-medium: (
+        weight: medium,
+        family: var(--font-ubuntu),
+        line-height: fifteen,
+        letter-spacing: md,
+        font-size: get-font-size(sm),
+    ),
+    t-4-regular: (
+        weight: regular,
+        family: var(--font-ubuntu),
+        line-height: twelve,
+        letter-spacing: md,
+        font-size: get-font-size(sm),
+    ),
+    t-5-regular: (
+        weight: regular,
+        family: var(--font-ubuntu),
+        line-height: twelve,
+        letter-spacing: md,
+        font-size: get-font-size(xs),
+    )
+)
