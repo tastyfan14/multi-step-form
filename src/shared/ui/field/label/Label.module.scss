@@ -1,0 +1,28 @@
+@use '@/shared/styles/mixins' as *;
+@use '@/shared/styles/functions' as *;
+
+//
+
+%label {
+    @include size(width, max-content);
+    @include size(height, max-content);
+
+    @include typography(t-5-regular);
+    color: var(--text-primary);
+
+    @include breakpoint(laptop) {
+        @include typography(t-4-regular);
+    };
+}
+
+.label {
+    @extend %label;
+
+    &__in {
+        @include flex($direction: column, $justify: center, $gap: m3);
+    }
+
+    &__out {
+        @include space(margin, 0, 0, m3, 0);
+    }
+}
