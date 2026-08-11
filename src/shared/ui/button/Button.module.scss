@@ -2,3 +2,86 @@
 @use '@/shared/styles/functions' as *; // instruments
 
 //
+
+.full {
+    @include size(width, full);
+}
+
+%btn {
+    @include size(width, max-content);
+
+    border-radius: get-radius(5xs);
+
+    @include flex($justify: center, $align: center, $gap: m3);
+
+    @include typography(t-4-medium);
+
+    transition: background-color .1s linear, color .1s linear, transform .1s linear;
+
+    @include breakpoint(laptop) {
+        border-radius: get-radius(3xs);
+
+        @include typography(t-3-medium);
+
+        gap: get-space(sm);
+    };
+
+    &:focus-visible {
+        outline: rem(2) solid currentColor;
+        outline-offset: get-space(m0);
+    }
+
+    &:active {
+        transform: scale(.98);
+    }
+}
+
+.primary, .secondary {
+    @extend %btn;
+
+    color: var(--text-secondary);
+
+    @include space(padding, m3, md, m3, md);
+
+    @include breakpoint(laptop) {
+        @include space(padding, sm, 3xl, sm, 3xl);
+    };
+}
+
+.primary {
+    background-color: var(--bg-secondary);
+
+    &:hover {
+        background-color: var(--bg-secondary-hover);
+    }
+
+    &:focus-visible {
+        outline-color: var(--bg-secondary);
+    }
+}
+
+.secondary {
+    background-color: var(--bg-accent-1);
+
+    &:hover {
+        background-color: var(--bg-accent-1-hover);
+    }
+
+    &:focus-visible {
+        outline-color: var(--bg-accent-1);
+    }
+}
+
+.additional {
+    @extend %btn;
+
+    @include space(padding, 0, 0, 0, 0);
+
+    color: var(--text-tertiary);
+
+    border-radius: 0;
+
+    &:hover {
+        color: var(--text-primary);
+    }
+}
