@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
 import '@/shared/styles/main.scss'
+import AppLayout from '@/shared/ui/layout/ui/AppLayout'
 
 const UbuntuFont = Ubuntu({
     variable: '--font-ubuntu',
@@ -20,7 +21,9 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     return (
         <html lang='en' className={`${UbuntuFont.variable}`}>
             <body>
-                {children}
+                <AppLayout>
+                    {children}
+                </AppLayout>
             </body>
         </html>
     )
