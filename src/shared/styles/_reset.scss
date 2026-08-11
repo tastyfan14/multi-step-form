@@ -14,25 +14,22 @@ html, body {
 }
 
 html {
-    scroll-behavior: smooth;
     font-size: 16px;
-    scrollbar-gutter: stable;
 
-    scrollbar-color: var(--bg-accent-primary) transparent;
-
-    text-rendering: optimizeLegibility;
-
+    scroll-behavior: smooth;
+    scrollbar-color: var(--bg-secondary) transparent;
     scrollbar-width: thin;
 }
 
 html::selection {
     background-color: var(--bg-accent-primary);
     color: var(--text-secondary);
+
+    scrollbar-gutter: stable;
 }
 
 body {
     text-rendering: optimizeSpeed;
-    scrollbar-gutter: stable;
 
     overflow-x: hidden;
 
@@ -52,6 +49,8 @@ img, picture {
 
 button, input, optgroup, select, textarea {
     font: inherit;
+    border: none;
+    background: none;
 }
 
 button, [type='button'], [type='reset'], [type='submit'] {
