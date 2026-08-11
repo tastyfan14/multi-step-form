@@ -2,3 +2,42 @@
 @use '@/shared/styles/functions' as *; // instruments
 
 //
+
+.radio-group {
+    @include size(width, full);
+
+    @include flex($direction: column);
+
+    &__title {
+        @include typography(t-2-bold);
+        color: var(--text-primary);
+
+        @include breakpoint(desktop) {
+            @include typography(t-1-bold);
+            color: var(--text-primary);
+        };
+
+        &--hidden {
+            display: none;
+        }
+    }
+
+    &__desc {
+        @include typography(t-3-regular);
+        color: var(--text-tertiary);
+
+        @include space(margin, m3, 0, m3, 0);
+    }
+
+    &__cards {
+        @include flex($direction: column, $gap: m3);
+
+        @include space(margin, 3xl, 0, 3xl, 0);
+
+        @include breakpoint(desktop) {
+            @include flex($direction: row, $gap: md);
+
+            @include space(margin, 7xl, 0, 7xl, 0);
+        };
+    }
+}
