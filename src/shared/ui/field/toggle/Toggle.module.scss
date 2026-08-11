@@ -2,3 +2,80 @@
 @use '@/shared/styles/functions' as *; // instruments
 
 //
+
+.toggle {
+    @include size(width, full);
+    @include size(height, max-content);
+
+    @include flex($justify: center, $align: center, $gap: 3xl);
+
+    @include space(padding, md, 0, md, 0); // inline 9xl mobile
+
+    border-radius: get-radius(3xs);
+
+    background-color: var(--bg-tertiary);
+
+    &__divider {
+        @include size(width, full, 38, 38);
+        @include size(height, full, 20, 20);
+
+        background-color: var(--bg-secondary);
+
+        border-radius: get-radius(2xs);
+
+        position: relative;
+
+        transition: background-color .1s linear, transform .1s linear;
+
+        &:hover {
+            background-color: var(--bg-secondary-hover);
+        }
+
+        &:focus-visible {
+            outline: rem(2) solid var(--bg-secondary);
+            outline-offset: rem(2);
+        }
+
+        &:active {
+            transform: scale(.98);
+        }
+    }
+
+    &__thumb {
+        width: rem(12);
+        height: rem(12);
+
+        position: absolute;
+        top: 50%;
+        left: rem(4);
+        transform: translateY(-50%);
+
+        transition: transform .1s linear;
+
+        cursor: pointer;
+
+        border-radius: get-radius(circle);
+
+        background-color: var(--bg-primary);
+
+        &--active {
+            transform: translate(rem(18), -50%);
+        }
+    }
+
+    &__title {
+        @include typography(t-4-medium);
+        color: var(--text-tertiary);
+
+        transition: color .1s linear;
+
+        @include breakpoint(desktop) {
+            @include typography(t-4-bold);
+            color: var(--text-tertiary);
+        };
+
+        &--active {
+            color: var(--text-primary);
+        }
+    }
+}
