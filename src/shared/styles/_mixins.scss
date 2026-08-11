@@ -214,6 +214,6 @@
             map.get($cls, line-height),
             map.get($cls, letter-spacing)
         );
-        font-size: map.get($cls, font-size);
+        font-size: get-font-size(map.get($cls, font-size));
     }
 }
