@@ -1,0 +1,73 @@
+@use '@/shared/styles/mixins' as *;
+@use '@/shared/styles/functions' as *;
+
+//
+
+.checkbox {
+    flex-direction: row !important;
+    align-items: end;
+
+    cursor: pointer;
+
+    position: relative;
+
+    &__checkmark {
+        width: rem(20);
+        height: rem(20);
+
+        border: rem(1) solid var(--border-primary);
+        border-radius: get-radius(5xs);
+
+        @include flex($justify: center, $align: center);
+
+        transition: border-color .05s linear, background-color .05s linear, transform .05s linear;
+
+        &--icon {
+            //
+
+            & path {
+                stroke: transparent;
+            }
+        }
+    }
+
+    &:has(input:checked) {
+        .checkbox__checkmark {
+            border-color: var(--border-outline-primary);
+            background-color: var(--bg-accent-1);
+
+            &--icon {
+                //
+
+                & path {
+                    stroke: var(--bg-i-primary);
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .checkbox__checkmark {
+            background-color: var(--bg-tertiary);
+        }
+    }
+
+    &:has(input:checked:focus-visible) {
+        .checkbox__checkmark {
+            border-color: var(--border-outline-primary);
+            outline: rem(2) solid var(--border-outline-primary);
+            outline-offset: rem(2);
+        }   
+    }
+
+    &:has(input:focus-visible) {
+        .checkbox__checkmark {
+            border-color: var(--border-outline-primary);
+            outline: rem(1) solid var(--border-outline-primary);
+        }
+    }
+
+    &:active {
+        transform: scale(.995);
+    }
+}
