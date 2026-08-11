@@ -7,20 +7,22 @@ export default function RadioGroup<T extends({ id: string })>({ title, desc, nam
     return (
         <fieldset className={cls['radio-group']} aria-describedby='radio-desc'>
             <legend className={clsx(cls['radio-group__title'], title === null ? cls['radio-group__title--hidden'] : null)}>{title !== null ? title : 'Select one'}</legend>
-            {desc && <p id='radio-desc'>{desc}</p>}
+            {desc && <p id='radio-desc' className={cls['radio-group__desc']}>{desc}</p>}
 
-            {options.map((option) => {
-                const id = `${name}-${option.id}`
-                return (
-                    <RadioCard
-                    key={option.id}
-                    id={id}
-                    name={name}
-                    >
-                        {renderCard(option)}
-                    </RadioCard>
-                )
-            })}
+            <div className={cls['radio-group__cards']}>
+                {options.map((option) => {
+                    const id = `${name}-${option.id}`
+                    return (
+                        <RadioCard
+                        key={option.id}
+                        id={id}
+                        name={name}
+                        >
+                            {renderCard(option)}
+                        </RadioCard>
+                    )
+                })}
+            </div>
         </fieldset>
     )
 }
