@@ -4,7 +4,7 @@
 //
 
 %label {
-    @include size(width, max-content);
+    @include size(width, full);
     @include size(height, max-content);
 
     @include typography(t-5-regular);
@@ -19,7 +19,7 @@
     @extend %label;
 
     &__in {
-        @include flex($direction: column, $justify: center, $gap: m3);
+        @include flex($direction: column, $gap: m3);
     }
 
     &__out {
