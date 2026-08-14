@@ -1,0 +1,155 @@
+@use '@/shared/styles/mixins' as *; // instruments
+@use '@/shared/styles/functions' as *; // instruments
+
+//
+
+.radio-card {
+    @include size(width, full);
+
+    background-color: transparent;
+
+    border: rem(1) solid var(--border-primary);
+    border-radius: get-radius(3xs);
+
+    position: relative;
+
+    transition: border-color .1s linear, background-color .1s linear, transform .1s linear;
+    will-change: transform;
+
+    & > * {
+        cursor: pointer;
+    }
+
+    &__label {
+        @include size(width, full);
+        @include size(height, full);
+    }
+
+    &:has(input:checked) {
+        border-color: var(--border-outline-primary);
+        background-color: var(--bg-tertiary);
+    }
+
+    &:hover {
+        background-color: var(--bg-tertiary);
+    }
+
+    &:has(input:focus-visible) {
+        outline: rem(1) solid var(--border-outline-primary);
+        border-color: var(--border-outline-primary);
+    }
+
+    &:active {
+        transform: scale(.995);
+
+        @include breakpoint(desktop) {
+            transform: scale(.99);
+        };
+    }
+}
+
+// For plan card
+
+.radio-card-plan {
+    @include size(width, full);
+
+    @include flex($align: center, $gap: md);
+
+    @include space(padding, md, md, md, md);
+
+    @include breakpoint(desktop) {
+        @include flex($direction: column, $align: start, $gap: m1);
+    };
+
+    &-arcade svg {
+        //
+
+        & rect {
+            fill: var(--bg-i-accent-3);
+        }
+
+        & path {
+            fill: var(--bg-i-primary);
+        }
+    }
+
+    &-advanced svg {
+        //
+
+        & rect {
+            fill: var(--bg-i-accent-2);
+        }
+
+        & path {
+            fill: var(--bg-i-primary);
+        }
+    }
+
+    &-pro svg {
+        //
+
+        & rect {
+            fill: var(--bg-i-accent-1);
+        }
+
+        & path {
+            fill: var(--bg-i-primary);
+        }
+    }
+
+    &__overview {
+        @include size(width, full);
+
+        @include flex($direction: column, $align: flex-start, $gap: m1);
+
+        @include breakpoint(laptop) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            align-items: center;
+        };
+
+        @include breakpoint(desktop) {
+            @include flex($direction: column, $align: start, $gap: m1);
+
+            @include space(margin, 3xl, 0, 0, 0);
+        };
+
+        & > * {
+            margin: 0;
+        }
+
+        &--title {
+            @include typography(t-3-medium);
+            color: var(--text-primary);
+        }
+
+        &--price {
+            @include typography(t-4-regular);
+            color: var(--text-tertiary);
+
+            @include breakpoint(laptop) {
+                grid-column-start: 1;
+                grid-row-start: 2;
+            };
+        }
+
+        &--bonus {
+            @include typography(t-5-regular);
+            color: var(--text-primary);
+
+            @include breakpoint(laptop) {
+                grid-row: span 2 / span 2;
+                grid-column-start: 2;
+                grid-row-start: 1;
+
+                margin-left: auto;
+            };
+
+            @include breakpoint(desktop) {
+                @include space(margin, m3, 0, 0, 0);
+            };
+        }
+    }
+}

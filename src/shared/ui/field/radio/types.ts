@@ -1,5 +1,10 @@
+export type RadioGroupProps<T> = {
+    name: string
+    options: T[]
+    renderCard: (option: T) => React.ReactNode
+}
+
 export type RadioCardProps = {
     id: string
     children: React.ReactNode
-    className?: string
 } & React.ComponentPropsWithoutRef<'input'>
