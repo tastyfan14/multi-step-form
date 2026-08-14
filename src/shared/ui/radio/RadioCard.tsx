@@ -1,7 +1,7 @@
 import cls from './RadioCard.module.scss'
 import type { RadioCardProps } from './types'
-import Input from '@/shared/ui/field/input'
-import Label from '@/shared/ui/field/label'
+import Input from '@/shared/ui/input'
+import Label from '@/shared/ui/label'
 
 export default function RadioCard({ id, children, ...props }: RadioCardProps) {
     return (

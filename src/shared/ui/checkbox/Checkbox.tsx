@@ -1,7 +1,7 @@
 import type { CheckboxProps } from './types'
 import cls from './Checkbox.module.scss'
-import Label from '@/shared/ui/field/label'
-import Input from '@/shared/ui/field/input'
+import Label from '@/shared/ui/label'
+import Input from '@/shared/ui/input'
 import clsx from 'clsx'
 
 export default function Checkbox({ className, children, ...props }: CheckboxProps) {
