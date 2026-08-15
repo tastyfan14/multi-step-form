@@ -1,0 +1,108 @@
+@use '@/shared/styles/mixins' as *; // instruments
+@use '@/shared/styles/functions' as *; // instruments
+
+//
+
+.steps {
+    @include size(width, full, get-breakpoint(mobileIn), get-breakpoint(desktop));
+    @include size(height, full, 172, 172);
+
+    background-image: url('/mobile/MultiStepForm/Step.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+
+    @include flex($justify: center, $align: center, $gap: md);
+
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+
+    @include breakpoint(laptop) {
+        @include size(width, full, 206, 206);
+        @include size(height, full, 568, 568);
+
+        position: relative;
+
+        @include space(margin, md, md, md, md);
+        @include space(padding, l0, 3xl, l0, 3xl);
+
+        @include flex($direction: column, $justify: start, $align: start, $gap: 7xl);
+
+        background-image: url('/laptop/MultiStepForm/Step.png');
+        background-size: 100% 100%;
+    };
+
+    @include breakpoint(desktop) {
+        @include size(width, full, 306, 306);
+        @include size(height, full, 600, 600);
+
+        @include space(margin, md, md, md, md);
+        @include space(padding, l0, 7xl, l0, 7xl);
+
+        background-image: url('/desktop/MultiStepForm/Step.png');
+        background-size: 100% 100%;
+    };
+
+    &-list {
+        @include flex($justify: center, $align: center, $gap: md);
+
+        position: relative;
+        top: -19%;
+
+        @include breakpoint(laptop) {
+            @include flex($direction: column, $justify: center, $align: start, $gap: 7xl);
+
+            top: 0;
+        };
+    }
+
+    &-item {
+        @include breakpoint(laptop) {
+            @include flex($align: center, $gap: md);
+        };
+
+        &__circle {
+            @include size(width, full, 33, 33);
+            @include size(height, full, 33, 33);
+
+            @include flex($justify: center, $align: center);
+
+            @include space(padding, 0, 0, 0, m0);
+
+            border: rem(1) solid var(--border-secondary);
+            border-radius: get-radius(circle);
+
+            transition: color .1s linear, background-color .1s linear, border-color .1s linear;
+
+            @include typography(t-4-bold);
+            color: var(--text-secondary);
+            text-align: center;
+
+            &--active {
+                color: var(--text-primary);
+                background-color: var(--bg-accent-4);
+                border-color: var(--border-accent-4);
+            }
+        }
+
+        &__overview {
+            display: none;
+
+            @include breakpoint(laptop) {
+                @include flex($direction: column, $justify: center, $gap: m0);
+            };
+
+            &--step {
+                @include typography(t-5-regular);
+                color: var(--text-quaternary);
+            }
+
+            &--title {
+                @include typography(t-4-bold);
+                color: var(--text-secondary);
+            }
+        }
+    }
+}
