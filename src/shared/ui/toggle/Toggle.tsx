@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import cls from './Toggle.module.scss'
 import type { ToggleProps } from './types'
 
-export default function Toggle<T>({ value, first, second, onChange }: ToggleProps<T>) {
+export default function Toggle<T>({ value, first, second, setValue }: ToggleProps<T>) {
     return (
         <div className={cls.toggle}>
             <span
@@ -12,10 +12,11 @@ export default function Toggle<T>({ value, first, second, onChange }: ToggleProp
             </span>
 
             <button
+            type='button'
             className={cls['toggle__divider']}
             aria-label={`Switch to ${value === first.value ? second.label : first.label}`}
             aria-pressed={value === first.value}
-            onClick={() => onChange(value === first.value ? second.value : first.value)}
+            onClick={() => setValue(value === first.value ? second.value : first.value)}
             >
                 <span className={clsx(cls['toggle__thumb'], value === first.value ? null : cls['toggle__thumb--active'])} />
             </button>
