@@ -8,5 +8,5 @@ export type ToggleProps<T> = {
         value: T,
         label: string
     }
-    onChange: (value: T) => void
+    setValue: (value: T) => void
 }
