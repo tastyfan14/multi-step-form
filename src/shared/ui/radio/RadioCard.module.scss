@@ -121,8 +121,13 @@
         }
 
         &--title {
-            @include typography(t-3-medium);
+            @include typography(t-4-regular);
             color: var(--text-primary);
+
+            @include breakpoint(laptop) {
+                @include typography(t-3-medium);
+                color: var(--text-primary);
+            };
         }
 
         &--price {
