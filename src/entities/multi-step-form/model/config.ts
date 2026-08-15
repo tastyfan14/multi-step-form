@@ -3,22 +3,23 @@ import IAdvanced from '@/shared/assets/IAdvanced'
 import IPro from '@/shared/assets/IPro'
 import Checkbox from '@/shared/ui/checkbox'
 import type { StepItem } from '@/widgets/MultiStepForm/model/types'
-
-type Basic = {
-    id: string
-    title: string
-    price: number
-}
+import type { FormValues } from './types'
 
 type PlanItem = {
+    id: string
     icon: React.ComponentType
+    title: string
+    price: number
     bonus?: string
-} & Basic
+}
 
 type CheckboxItem = {
+    id: FormValues['checkbox']['addons'][number]
     checkbox: React.ComponentType
+    title: string
     desc: string
-} & Basic
+    price: number
+}
 
 export const FIELD_PLAN_MONTH: PlanItem[] = [
     {
@@ -67,21 +68,21 @@ export const FIELD_PLAN_YEAR: PlanItem[] = [
 
 export const FIELD_PICKADDONS_MONTH: CheckboxItem[] = [
     {
-        id: 'checkbox-onlineservice',
+        id: 'online-service',
         checkbox: Checkbox,
         title: 'Online service',
         desc: 'Access to multiplayer games',
         price: 1,
     },
     {
-        id: 'checkbox-storage',
+        id: 'larger-storage',
         checkbox: Checkbox,
         title: 'Larger storage',
         desc: 'Extra 1TB of cloud save',
         price: 2,
     },
     {
-        id: 'checkbox-profile',
+        id: 'customizable-profile',
         checkbox: Checkbox,
         title: 'Customizable profile',
         desc: 'Custom theme on your profile',
@@ -91,21 +92,21 @@ export const FIELD_PICKADDONS_MONTH: CheckboxItem[] = [
 
 export const FIELD_PICKADDONS_YEAR: CheckboxItem[] = [
     {
-        id: 'checkbox-onlineservice',
+        id: 'online-service',
         checkbox: Checkbox,
         title: 'Online service',
         desc: 'Access to multiplayer games',
         price: 10,
     },
     {
-        id: 'checkbox-storage',
+        id: 'larger-storage',
         checkbox: Checkbox,
         title: 'Larger storage',
         desc: 'Extra 1TB of cloud save',
         price: 20,
     },
     {
-        id: 'checkbox-profile',
+        id: 'customizable-profile',
         checkbox: Checkbox,
         title: 'Customizable profile',
         desc: 'Custom theme on your profile',
