@@ -3,16 +3,20 @@ import z from 'zod'
 export const FormSchema = z.object({
     name: z
         .string()
-        .min(2),
+        .trim()
+        .regex(/^[\p{L}]+(?:[ '-][\p{L}]+)+$/u, 'Name is required'),
     email: z
         .string()
+        .trim()
+        .min(7, 'Email is required')
         .email(),
     phone: z
-        .string().
-        min(5),
+        .string()
+        .trim()
+        .min(5),
 
     plan: z
-        .enum(['arcade', 'advanced', 'pro'])
+        .enum(['plan-arcade', 'plan-advanced', 'plan-pro'])
         .optional()
         .refine((plan) => plan !== undefined, {
             message: 'Plan is required',
