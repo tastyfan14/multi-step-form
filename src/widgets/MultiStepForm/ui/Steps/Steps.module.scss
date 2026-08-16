@@ -66,10 +66,10 @@
         &__circle {
             @include size(width, full, 33, 33);
             @include size(height, full, 33, 33);
-
+ 
             @include flex($justify: center, $align: center);
 
-            @include space(padding, 0, 0, 0, m0);
+            padding-left: rem(1);
 
             border: rem(1) solid var(--border-secondary);
             border-radius: get-radius(circle);
@@ -78,7 +78,7 @@
 
             @include typography(t-4-bold);
             color: var(--text-secondary);
-            text-align: center;
+            line-height: 1;
 
             &--active {
                 color: var(--text-primary);
