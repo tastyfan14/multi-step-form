@@ -4,9 +4,9 @@ import Label from '@/shared/ui/label'
 import Input from '@/shared/ui/input'
 import clsx from 'clsx'
 
-export default function Checkbox({ className, children, ...props }: CheckboxProps) {
+export default function Checkbox({ className, children, variant, ...props }: CheckboxProps) {
     return (
-        <Label variant='in' className={clsx(cls['checkbox'], className && className)}>
+        <Label variant='in' className={clsx(cls['checkbox'], className && className, cls[`checkbox--${variant}`])}>
             <Input type='checkbox' {...props} />
 
             <span className={cls['checkbox__checkmark']}>
