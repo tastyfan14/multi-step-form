@@ -1,7 +1,7 @@
 import IArcade from '@/shared/assets/IArcade'
 import IAdvanced from '@/shared/assets/IAdvanced'
 import IPro from '@/shared/assets/IPro'
-import Checkbox from '@/shared/ui/checkbox'
+import { Checkbox } from '@/shared/ui/checkbox'
 import type { StepItem } from '@/widgets/MultiStepForm/model/types'
 import type { FormValues } from './types'
 
@@ -15,27 +15,40 @@ type PlanItem = {
 
 type CheckboxItem = {
     id: FormValues['checkbox']['addons'][number]
-    checkbox: React.ComponentType
+    checkbox: React.ElementType
     title: string
     desc: string
     price: number
 }
 
+export const MULTI_STEP_FORM_DEFAULT_VALUES: FormValues = {
+    name: '',
+    email: '',
+    phone: '',
+
+    plan: undefined,
+    billingPeriod: 'month',
+
+    checkbox: {
+        addons: [],
+    },
+}
+
 export const FIELD_PLAN_MONTH: PlanItem[] = [
     {
-        id: 'radio-card-plan-arcade',
+        id: 'plan-arcade',
         icon: IArcade,
         title: 'Arcade',
         price: 9,
     },
     {
-        id: 'radio-card-plan-advanced',
+        id: 'plan-advanced',
         icon: IAdvanced,
         title: 'Advanced',
         price: 12,
     },
     {
-        id: 'radio-card-plan-pro',
+        id: 'plan-pro',
         icon: IPro,
         title: 'Pro',
         price: 15,
@@ -44,21 +57,21 @@ export const FIELD_PLAN_MONTH: PlanItem[] = [
 
 export const FIELD_PLAN_YEAR: PlanItem[] = [
     {
-        id: 'radio-card-plan-arcade',
+        id: 'plan-arcade',
         icon: IArcade,
         title: 'Arcade',
         price: 90,
         bonus: '2 months free',
     },
     {
-        id: 'radio-card-plan-advanced',
+        id: 'plan-advanced',
         icon: IAdvanced,
         title: 'Advanced',
         price: 120,
         bonus: '2 months free',
     },
     {
-        id: 'radio-card-plan-pro',
+        id: 'plan-pro',
         icon: IPro,
         title: 'Pro',
         price: 150,
