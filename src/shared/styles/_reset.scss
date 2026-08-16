@@ -22,8 +22,8 @@ html {
 }
 
 html::selection {
-    // background-color: var(--bg-accent-primary);
-    // color: var(--text-secondary);
+    background-color: var(--bg-accent-1);
+    color: var(--text-secondary);
 
     scrollbar-gutter: stable;
 }
