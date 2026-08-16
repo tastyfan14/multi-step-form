@@ -30,44 +30,65 @@
             }
         }
     }
+}
 
-    &:has(input:checked) {
-        .checkbox__checkmark {
-            border-color: var(--border-outline-primary);
-            background-color: var(--bg-accent-1);
+.checkbox {
+    &--card {
+        &:has(input:checked) {
+            .checkbox__checkmark {
+                border-color: var(--border-outline-primary);
+                background-color: var(--bg-accent-1);
 
-            &--icon {
-                //
+                &--icon {
+                    //
 
-                & path {
-                    stroke: var(--bg-i-primary);
+                    & path {
+                        stroke: var(--bg-i-primary);
+                    }
                 }
             }
         }
     }
 
-    &:hover {
-        .checkbox__checkmark {
-            background-color: var(--bg-tertiary);
+    &--independent {
+        &:has(input:checked) {
+            .checkbox__checkmark {
+                border-color: var(--border-outline-primary);
+                background-color: var(--bg-accent-1);
+
+                &--icon {
+                    //
+
+                    & path {
+                        stroke: var(--bg-i-primary);
+                    }
+                }
+            }
         }
-    }
 
-    &:has(input:checked:focus-visible) {
-        .checkbox__checkmark {
-            border-color: var(--border-outline-primary);
-            outline: rem(2) solid var(--border-outline-primary);
-            outline-offset: rem(2);
-        }   
-    }
-
-    &:has(input:focus-visible) {
-        .checkbox__checkmark {
-            border-color: var(--border-outline-primary);
-            outline: rem(1) solid var(--border-outline-primary);
+        &:hover {
+            .checkbox__checkmark {
+                background-color: var(--bg-tertiary);
+            }
         }
-    }
 
-    &:active {
-        transform: scale(.995);
+        &:has(input:checked:focus-visible) {
+            .checkbox__checkmark {
+                border-color: var(--border-outline-primary);
+                outline: rem(2) solid var(--border-outline-primary);
+                outline-offset: rem(2);
+            }   
+        }
+
+        &:has(input:focus-visible) {
+            .checkbox__checkmark {
+                border-color: var(--border-outline-primary);
+                outline: rem(1) solid var(--border-outline-primary);
+            }
+        }
+
+        &:active {
+            transform: scale(.995);
+        }
     }
 }
