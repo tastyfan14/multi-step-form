@@ -1,0 +1,37 @@
+@use '@/shared/styles/mixins' as *; // instruments
+@use '@/shared/styles/functions' as *; // instruments
+
+//
+
+.step-content {
+    @include size(width, full);
+
+    @include flex($direction: column);
+
+    @include breakpoint(laptop) {
+        @include space(margin, l0, 0, l0, 0);
+
+        @include size(width, full, 295, 450);
+    }
+
+    @include breakpoint(desktop) {
+        @include space(margin, l0, 0, l2, 0);
+    }
+
+    &__title {
+        @include typography(t-2-bold);
+        color: var(--text-primary);
+
+        @include breakpoint(desktop) {
+            @include typography(t-1-bold);
+            color: var(--text-primary);
+        };
+    }
+
+    &__desc {
+        @include typography(t-3-regular);
+        color: var(--text-tertiary);
+
+        @include space(margin, m3, 0, m3, 0);
+    }
+}
