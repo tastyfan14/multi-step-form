@@ -21,6 +21,7 @@ export type NavigationProps = {
     prevStep: () => void
     nextStep: () => void
     currentStep: number
+    isSubmitting: boolean
 }
 
 // Step content
