@@ -39,6 +39,10 @@
         border-color: var(--border-outline-primary);
     }
 
+    &:has(input[aria-invalid='true']) {
+        border-color: var(--border-error);
+    }
+
     &:active {
         transform: scale(.995);
 
