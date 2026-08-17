@@ -75,18 +75,18 @@
     }
 
     &__isMobile {
-        display: flex;
+        display: flex !important;
 
         @include breakpoint(laptop) {
-            display: none;
+            display: none !important;
         }
     }
 
     &__isLaptop {
-        display: none;
+        display: none !important;
 
         @include breakpoint(laptop) {
-            display: flex;
+            display: flex !important;
         }
     }
 
