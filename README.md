@@ -44,14 +44,14 @@ The project was implemented in compliance with accessibility requirements.
 
 Desktop:
 
-Performance 82
+Performance 91
 Accessibility 96
 Best Practices 100
 SEO 100
 
 Mobile:
 
-Performance 71
+Performance 82
 Accessibility 96
 Best Practices 100
 SEO 100
