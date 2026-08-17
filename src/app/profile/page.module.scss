@@ -1,0 +1,20 @@
+@use '@/shared/styles/mixins' as *; // instruments
+@use '@/shared/styles/functions' as *; // instruments
+
+//
+
+.page {
+    margin-top: get-space(l4);
+    @include flex($direction: column, $gap: 3xl);
+
+    &__title {
+        @include typography(t-1-bold);
+        color: var(--text-primary);
+        text-transform: uppercase;
+    }
+
+    &__button {
+        @include typography(t-3-medium);
+        color: var(--text-secondary);
+    }
+}
