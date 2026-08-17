@@ -1,0 +1,262 @@
+@use '@/shared/styles/mixins' as *; // instruments
+@use '@/shared/styles/functions' as *; // instruments
+
+//
+
+.msf {
+    position: relative;
+
+    &__container {
+        @include flex($justify: center, $align: center);
+    }
+
+    &__form {
+        @include size(width, full, get-breakpoint(mobileIn), get-breakpoint(postMobile));
+        @include size(height, max-content);
+
+        @include space(margin, l8, 0, l8, 0);
+        @include space(padding, 7xl, 3xl, 7xl, 3xl);
+
+        @include flex($justify: space-between, $align: stretch);
+
+        background-color: var(--bg-primary);
+
+        position: relative;
+        z-index: 10;
+
+        box-shadow: 0 0 rem(11) rgba(0, 0, 0, .1);
+
+        border-radius: get-radius(2xs);
+
+        @include breakpoint(laptop) {
+            @include size(width, full, get-breakpoint(laptopIn), get-breakpoint(laptopIn));
+
+            border-radius: get-radius(md);
+
+            @include space(padding, 0, l2, 0, 0);
+
+            gap: get-space(l0);
+        };
+
+        @include breakpoint(desktop) {
+            @include size(width, full, get-breakpoint(desktopIn), get-breakpoint(desktopIn));
+
+            @include space(padding, 0, l5, 0, 0);
+
+            gap: get-space(l3);
+        };
+    }
+
+    &__fields {
+        @include flex($direction: column, $gap: md);
+
+        @include space(margin, md, 0, 0, 0);
+
+        @include breakpoint(desktop) {
+            gap: get-space(3xl);
+
+            @include space(margin, 7xl, 0, 7xl, 0);
+        }
+    }
+
+    &__error {
+        @include space(margin, m1, 0, m1, 0);
+
+        @include typography(t-4-bold);
+        color: var(--text-error);
+    }
+
+    &__column {
+        @include flex($direction: column, $gap: m3);
+
+        @include breakpoint(desktop) {
+            gap: get-space(md);
+        }
+    }
+
+    &__isMobile {
+        display: flex;
+
+        @include breakpoint(laptop) {
+            display: none;
+        }
+    }
+
+    &__isLaptop {
+        display: none;
+
+        @include breakpoint(laptop) {
+            display: flex;
+        }
+    }
+
+    &__success {
+        @include flex($direction: column, $justify: center, $align: center, $gap: m3);
+
+        @include space(margin, l1, 0, l1, 0);
+
+        @include breakpoint(laptop) {
+            gap: get-space(md);
+        };
+
+        & > * {
+            margin: 0;
+        }
+
+        & svg {
+            //
+
+            & circle {
+                fill: var(--bg-i-accent-2);
+            }
+
+            & path:first-of-type {
+                fill: var(--bg-i-accent-4);
+            }
+
+            & path:last-of-type {
+                fill: var(--bg-i-primary);
+            }
+        }
+
+        &--title {
+            @include space(margin, m3, 0, 0, 0);
+
+            @include breakpoint(laptop) {
+                gap: get-space(md);
+            };
+
+            @include typography(t-2-bold);
+            color: var(--text-primary);
+
+            @include breakpoint(laptop) {
+                @include typography(t-1-bold);
+                color: var(--text-primary);
+            };
+        }
+
+        &--desc {
+            @include typography(t-3-regular);
+            color: var(--text-tertiary);
+
+            text-align: center;
+        }
+    }
+}
+
+.step-content-summary {
+    @include flex($direction: column, $gap: 3xl);
+
+    @include breakpoint(laptop) {
+        gap: get-space(7xl);
+    };
+
+    &__container {
+        @include flex($direction: column);
+
+        @include space(padding, md, md, md, md);
+
+        background-color: var(--bg-accent-5);
+
+        border-radius: get-radius(3xs);
+
+        @include breakpoint(laptop) {
+            @include space(padding, 3xl, 3xl, 3xl, 3xl);
+        };
+    }
+
+    &__plan {
+        @include flex($justify: space-between, $align: center);
+
+        &--container {
+            @include flex($direction: column);
+
+            @include breakpoint(laptop) {
+                gap: get-space(m3);
+            };
+
+            @include breakpoint(laptop) {
+                gap: get-space(m3);
+            };
+        }
+
+        &--title {
+            margin: 0;
+
+            @include typography(t-4-medium);
+            color: var(--text-primary);
+
+            @include breakpoint(laptop) {
+                @include typography(t-3-medium);
+                color: var(--text-primary);
+            };
+        }
+
+        &--price {
+            @include typography(t-4-bold);
+            color: var(--text-primary);
+
+            @include breakpoint(laptop) {
+                @include font(bold, var(--font-ubuntu), var(--text-primary), xl, md);
+                font-size: get-font-size(md);
+            };
+        }
+
+        &--btn {
+            @include typography(t-4-regular);
+            color: var(--text-tertiary);
+
+            &:hover {
+                color: var(--text-accent-1-hover);
+            }
+        }
+    }
+
+    &__line {
+        border: rem(1) solid var(--border-primary);
+
+        @include space(margin, md, 0, xl, 0);
+    }
+
+    &__addons {
+        @include flex($direction: column, $gap: md);
+    }
+
+    &__addon {
+        @include flex($justify: space-between, $align: center);
+
+        &--title {
+            @include typography(t-4-regular);
+            color: var(--text-tertiary);
+        }
+
+        &--price {
+            @include typography(t-4-regular);
+            color: var(--text-primary);
+        }
+    }
+
+    &__total {
+        @include flex($justify: space-between);
+
+        @include space(padding, md, md, 0, md);
+
+        @include breakpoint(laptop) {
+            @include space(padding, 3xl, 3xl, 0, 3xl);
+        };
+
+        &--label {
+            @include typography(t-4-regular);
+            color: var(--text-tertiary);
+        }
+
+        &--title {
+            @include font(bold, var(--font-ubuntu), var(--text-accent-primary), xl, md);
+            font-size: get-font-size(md);
+
+            @include breakpoint(laptop) {
+                font-size: get-font-size(xl);
+            };
+        }
+    }
+}
