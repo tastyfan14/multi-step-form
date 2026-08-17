@@ -13,7 +13,7 @@
     @include space(padding, m3, md, m3, md);
 
     @include typography(t-4-medium);
-    color: var(--text-secondary);
+    color: var(--text-primary);
 
     @include breakpoint(laptop) {
         border-radius: get-radius(3xs);
