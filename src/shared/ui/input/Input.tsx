@@ -8,7 +8,7 @@ export default function Input({ rightEl, leftEl, className, ...props }: InputPro
             {rightEl}
 
             <input
-            className={clsx(cls['input'], className && className)}
+            className={clsx(cls['input'], className)}
             {...props}
             />
 
