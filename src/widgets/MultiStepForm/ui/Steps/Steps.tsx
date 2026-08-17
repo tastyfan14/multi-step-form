@@ -6,7 +6,7 @@ import cls from './Steps.module.scss'
 export function Steps({ steps, currentStep, className }: StepsProps) {
     return (
         <nav
-        className={clsx(cls['steps'], className && className)}
+        className={clsx(cls['steps'], className)}
         aria-label='Progress'
         >
             {steps.map((step) => {
