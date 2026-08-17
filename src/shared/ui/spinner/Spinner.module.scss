@@ -7,8 +7,8 @@
     width: rem(18);
     height: rem(18);
 
-    border: 2px solid transparent;
-    border-right-color: currentColor;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
     border-radius: get-radius(circle);
 
     animation: spin .7s linear infinite;
@@ -16,6 +16,6 @@
 
 @keyframes spin {
     to {
-        transform: rotate(360);
+        transform: rotate(360deg);
     }
 }
