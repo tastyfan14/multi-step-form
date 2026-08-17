@@ -1,4 +1,8 @@
+import { FIELD_STEPS } from '@/entities/multi-step-form/model/config'
+
 // Steps
+
+export type StepLength = typeof FIELD_STEPS[number]['step']
 
 export type StepItem = {
     step: number
