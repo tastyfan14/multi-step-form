@@ -5,7 +5,7 @@ import { Checkbox } from '@/shared/ui/checkbox'
 import type { StepItem } from '@/widgets/MultiStepForm/model/types'
 import type { FormValues } from './types'
 
-type PlanItem = {
+export type PlanItem = {
     id: string
     icon: React.ComponentType
     title: string
@@ -21,7 +21,7 @@ type CheckboxItem = {
     price: number
 }
 
-export const MULTI_STEP_FORM_DEFAULT_VALUES: FormValues = {
+export const MULTI_STEP_FORM_DEFAULT_VALUES = {
     name: '',
     email: '',
     phone: '',
@@ -32,9 +32,9 @@ export const MULTI_STEP_FORM_DEFAULT_VALUES: FormValues = {
     checkbox: {
         addons: [],
     },
-}
+} satisfies FormValues
 
-export const FIELD_PLAN_MONTH: PlanItem[] = [
+export const FIELD_PLAN_MONTH = [
     {
         id: 'plan-arcade',
         icon: IArcade,
@@ -53,9 +53,9 @@ export const FIELD_PLAN_MONTH: PlanItem[] = [
         title: 'Pro',
         price: 15,
     },
-] as const
+] satisfies PlanItem[]
 
-export const FIELD_PLAN_YEAR: PlanItem[] = [
+export const FIELD_PLAN_YEAR = [
     {
         id: 'plan-arcade',
         icon: IArcade,
@@ -77,9 +77,9 @@ export const FIELD_PLAN_YEAR: PlanItem[] = [
         price: 150,
         bonus: '2 months free',
     },
-] as const
+] satisfies PlanItem[]
 
-export const FIELD_PICKADDONS_MONTH: CheckboxItem[] = [
+export const FIELD_PICKADDONS_MONTH = [
     {
         id: 'online-service',
         checkbox: Checkbox,
@@ -101,9 +101,9 @@ export const FIELD_PICKADDONS_MONTH: CheckboxItem[] = [
         desc: 'Custom theme on your profile',
         price: 2,
     },
-] as const
+] satisfies CheckboxItem[]
 
-export const FIELD_PICKADDONS_YEAR: CheckboxItem[] = [
+export const FIELD_PICKADDONS_YEAR = [
     {
         id: 'online-service',
         checkbox: Checkbox,
@@ -125,13 +125,21 @@ export const FIELD_PICKADDONS_YEAR: CheckboxItem[] = [
         desc: 'Custom theme on your profile',
         price: 20,
     },
-] as const
+] satisfies CheckboxItem[]
 
-export const FIELD_STEPS: StepItem[] = [
+export const FIELD_STEPS = [
     { step: 1, title: 'YOUR INFO' },
     { step: 2, title: 'SELECT PLAN' },
     { step: 3, title: 'ADD-ONS' },
     { step: 4, title: 'SUMMARY' },
+] satisfies StepItem[]
+
+export const STEP_FIELDS = [
+    undefined,
+    ['name', 'email', 'phone'],
+    ['plan', 'billingPeriod'],
+    ['checkbox.addons'],
+    undefined,
 ] as const
 
 export const FIELD_TOGGLE_FIRST = { label: 'Monthly', value: 'month' } as const
