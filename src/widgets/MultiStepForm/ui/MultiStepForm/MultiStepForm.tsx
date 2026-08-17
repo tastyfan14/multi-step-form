@@ -9,7 +9,7 @@ import Input from '@/shared/ui/input'
 import Toggle from '@/shared/ui/toggle'
 import RadioGroup from '@/shared/ui/radio/RadioGroup'
 import { CheckboxCard } from '@/shared/ui/checkbox'
-import Container from '@/shared/ui/layout/ui/Container'
+import MainLayout from '@/shared/ui/layout/ui/MainLayout'
 import cls from './MultiStepForm.module.scss'
 import clsRadio from '@/shared/ui/radio/RadioCard.module.scss'
 import clsCheckbox from '@/shared/ui/checkbox/CheckboxCard.module.scss'
@@ -48,10 +48,10 @@ export function MultiStepForm() {
         total,
     } = useCheckoutSummary(control)
     return (
-        <div>
+        <section>
             <Steps currentStep={currentStep} steps={FIELD_STEPS} className={cls['msf__isMobile']} />
 
-            <Container className={cls['msf__container']}>
+            <MainLayout className={cls['msf__container']}>
                 <form onSubmit={handleSubmit(onSubmit)} className={cls['msf__form']}>
                     <Steps currentStep={currentStep} steps={FIELD_STEPS} className={cls['msf__isLaptop']} />
 
@@ -264,7 +264,7 @@ export function MultiStepForm() {
                         </>
                     }
                 </form>
-            </Container>
-        </div>
+            </MainLayout>
+        </section>
     )
 }
