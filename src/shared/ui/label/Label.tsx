@@ -9,7 +9,7 @@ export default function Label({ className, children, variant, ...props }: LabelP
             cls['label'],
             variant === 'in' && cls['label__in'],
             variant === 'out' && cls['label__out'],
-            className && className
+            className
         )}
         {...props}
         >
