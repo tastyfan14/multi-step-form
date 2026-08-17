@@ -1,10 +1,22 @@
 type ButtonVariants = 'primary' | 'secondary' | 'additional'
 
-export type ButtonProps = {
+type Basic = {
+    variant: ButtonVariants
+
     children: React.ReactNode
 
-    variant: ButtonVariants
     className?: string
-    fullWidth?: boolean
-    loading?: boolean
-} & React.ComponentPropsWithoutRef<'button'>
+}
+
+export type ButtonProps =
+    | {
+        as?: 'button'
+
+        fullWidth?: boolean
+        loading?: boolean
+    } & Basic & React.ComponentPropsWithoutRef<'button'>
+    | {
+        as: 'link'
+
+        href: string
+    } & Basic & React.ComponentPropsWithoutRef<'a'>
