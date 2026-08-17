@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Mentor Multi-Step Form
 
-## Getting Started
+This is my solution for the Frontend Mentor challenge. It’s my first time building a multi-step form like this. I’m looking forward to your feedback and any suggestions for improvement.
 
-First, run the development server:
+## Preview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[Live Demo](https://multi-step-form-ecru-ten.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
+- Next.js
+- React
+- TypeScript
+- SCSS
+- React Hook Form
+- Zod
+- Zustand
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Form state** management using React Hook Form.
+- **Schema validation** with Zod.
+- **Data persistence** in Local Storage.
+- **Global state management** with Zustand to preserve form data across multi-step navigation.
+- **Error handling** for invalid inputs.
+- **Multi-step** navigation with data validation before proceeding to the next step.
+- **Responsive design**.
+- **Accessible UI** with full keyboard navigation support *(semantic HTML)*.
+- **SEO and Open Graph** metadata configuration.
+- **Analysis** using Lighthouse.
 
-## Learn More
+## Accessibility
 
-To learn more about Next.js, take a look at the following resources:
+The project was implemented in compliance with accessibility requirements.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Semantic HTML
+- Proper form labels
+- Keyboard navigation
+- Accessible interactive elements
+- Focus management
+- Error messages associated with form fields
+- Responsive layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Lighthouse
 
-## Deploy on Vercel
+Desktop:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Performance 82
+Accessibility 96
+Best Practices 100
+SEO 100
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Mobile:
+
+Performance 71
+Accessibility 96
+Best Practices 100
+SEO 100
+
+## Project Goals
+
+The primary goal of the project was to build a realistic multi-step form, implementing production-oriented frontend development practices:
+
+- Component architecture
+- Type-safe development
+- Form state management
+- Schema validation
+- Persistent state
+- Error handling
+- Accessibility
+- Responsive design
+- SEO
