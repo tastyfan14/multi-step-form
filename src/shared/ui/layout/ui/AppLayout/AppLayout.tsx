@@ -4,7 +4,7 @@ import cls from './AppLayout.module.scss'
 
 export default function AppLayout({ className, children }: LayoutProps) {
     return (
-        <div className={clsx(cls['app-layout'], className && className)}>
+        <div className={clsx(cls['app-layout'], className)}>
             {children}
         </div>
     )

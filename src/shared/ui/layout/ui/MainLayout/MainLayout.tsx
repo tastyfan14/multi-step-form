@@ -4,7 +4,7 @@ import cls from './MainLayout.module.scss'
 
 export default function MainLayout({ className, children }: LayoutProps) {
     return (
-        <main className={clsx(cls['main-layout'], className && className)}>
+        <main className={clsx(cls['main-layout'], className)}>
             {children}
         </main>
     )

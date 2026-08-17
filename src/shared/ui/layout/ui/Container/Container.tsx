@@ -4,7 +4,7 @@ import cls from './Container.module.scss'
 
 export default function Container({ className, children }: LayoutProps) {
     return (
-        <div className={clsx(cls['container'], className && className)}>
+        <div className={clsx(cls['container'], className)}>
             {children}
         </div>
     )
