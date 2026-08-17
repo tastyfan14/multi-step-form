@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 export default function Checkbox({ className, children, variant, ...props }: CheckboxProps) {
     return (
-        <Label variant='in' className={clsx(cls['checkbox'], className && className, cls[`checkbox--${variant}`])}>
+        <Label variant='in' className={clsx(cls['checkbox'], className, cls[`checkbox--${variant}`])}>
             <Input type='checkbox' {...props} />
 
             <span className={cls['checkbox__checkmark']}>
