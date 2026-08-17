@@ -7,6 +7,10 @@
     @include size(width, full);
 }
 
+.link {
+    display: inline;
+}
+
 %btn {
     @include size(width, max-content);
 
@@ -17,6 +21,7 @@
     @include typography(t-4-medium);
 
     transition: background-color .1s linear, color .1s linear, transform .1s linear;
+    will-change: transform;
 
     @include breakpoint(laptop) {
         border-radius: get-radius(3xs);
