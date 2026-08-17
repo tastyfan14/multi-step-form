@@ -2,8 +2,9 @@ import Button from '@/shared/ui/button'
 import cls from './Navigation.module.scss'
 import type { NavigationProps } from '../../model/types'
 import { FIELD_STEPS } from '@/entities/multi-step-form/model/config'
+import Spinner from '@/shared/ui/spinner'
 
-export function Navigation({ prevStep, nextStep, currentStep }: NavigationProps) {
+export function Navigation({ prevStep, nextStep, currentStep, isSubmitting }: NavigationProps) {
     return (
         <div className={cls['navigation']}>
             {currentStep !== 1 && (
@@ -34,8 +35,9 @@ export function Navigation({ prevStep, nextStep, currentStep }: NavigationProps)
                     variant='secondary'
                     className={cls['navigation__next']}
                     onClick={nextStep}
+                    disabled={isSubmitting}
                     >
-                        Confirm
+                        {isSubmitting ? <Spinner /> : 'Confirm'}
                     </Button>
                 )
             }
