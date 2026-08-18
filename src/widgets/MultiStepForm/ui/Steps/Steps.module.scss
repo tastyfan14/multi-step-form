@@ -35,8 +35,8 @@
     };
 
     @include breakpoint(desktop) {
-        @include size(width, full, 306, 306);
-        @include size(height, full, 600, 600);
+        @include size(width, full, 274, 274);
+        @include size(height, full, 568, 568);
 
         @include space(margin, md, md, md, md);
         @include space(padding, l0, 7xl, l0, 7xl);
