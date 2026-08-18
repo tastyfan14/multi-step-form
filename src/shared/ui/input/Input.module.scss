@@ -10,7 +10,7 @@
 
     @include flex($justify: center, $align: center, $gap: m3);
 
-    @include space(padding, m3, md, m3, md);
+    @include space(padding, xs, md, xs, md);
 
     @include typography(t-4-medium);
     color: var(--text-primary);
