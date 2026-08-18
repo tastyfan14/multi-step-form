@@ -41,7 +41,7 @@
         @include breakpoint(desktop) {
             @include size(width, full, get-breakpoint(desktopIn), get-breakpoint(desktopIn));
 
-            @include space(padding, 0, l5, 0, 0);
+            @include space(padding, 0, l7, 0, 0);
 
             gap: get-space(l3);
         };
