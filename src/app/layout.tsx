@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Ubuntu } from 'next/font/google'
 import '@/shared/styles/main.scss'
 import AppLayout from '@/shared/ui/layout/ui/AppLayout'
@@ -8,6 +8,12 @@ const UbuntuFont = Ubuntu({
     weight: ['400', '500', '700'],
     subsets: ['latin'],
 })
+
+export const viewport: Viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+}
 
 export const metadata: Metadata = {
     title: 'Multi-Step Form',
@@ -33,7 +39,7 @@ export const metadata: Metadata = {
         description: 'Challenge by Frontend Mentor. Coded by @tasty_fan14.',
         card: 'summary_large_image',
         images: '/preview.jpg',
-    }
+    },
 }
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
